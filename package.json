@@ -1,0 +1,33 @@
+{
+  "name": "doc25_ci",
+  "version": "1.0.0",
+  "description": "continuous integration, docker",
+  "main": "index.js",
+  "scripts": {
+    "start":"nodemon src/index.js --watch src node_modules --exec babel-node",
+    "build":"babel src -d dist",
+    "serve":"node dist/index.js",
+    "lint":"eslint src __test__",
+    "lint:fix":"eslint --fix src __test__",
+    "test": "NODE_ENV=test jest --config jest.json --coverage",
+    "test:staging":"jest --config jest.staging.json --runInBand",
+    "test:watch":"NODE_ENV=test jest --config jest.json --watch --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://maximilianou@github.com/maximilianou/doc25_ci.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/maximilianou/doc25_ci/issues"
+  },
+  "homepage": "https://github.com/maximilianou/doc25_ci#readme",
+  "dependencies": {
+    "babel": "^6.23.0",
+    "eslint": "^6.1.0",
+    "jest": "^24.8.0",
+    "nodemon": "^1.19.1"
+  }
+}
