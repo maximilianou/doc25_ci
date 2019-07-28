@@ -24,13 +24,23 @@ function create(){
 
   this.req.on('end', () => {
     console.log(`client D::\n${data}`);
-    client.close();
+    this.client.close();
   });
-  this.req.end();
+  this.end = ()  => {
+    this.req.end( () => {
+      console.log(`client E:: end() `);
+    } );
+  };
 
   return this;
 };
 
-create();
-create();
-create();
+let uno = create();
+let dos = create();
+let tres = create();
+uno.end();
+dos.end();
+tres.end();
+// uno = null;
+// dos = null;
+// tres = null; 

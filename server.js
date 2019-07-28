@@ -15,7 +15,9 @@ function create(){
       'content-type': 'text/html',
       'status': 200
     });
-    stream.end('<h2>Ok, Now we are connected!!</h2>');
+    stream.end('<h2>Ok, Now we are connected!!</h2>', 'utf8', () => {
+      console.log(`server:: end() finished`);
+    });
   });
   this.start = ( port = 3443) => {
       this.server.listen(port, () => { 
