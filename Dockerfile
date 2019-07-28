@@ -1,7 +1,7 @@
 FROM node:alpine AS build
 #optional install gyp tools
 RUN apk add --update --no-cache python make g++
-ADD ./src
+ADD . /src
 WORKDIR /src
 RUN npm install
 RUN npm run lint
@@ -16,7 +16,7 @@ ENV PORT=3000
 EXPOSE $PORT
 
 ENV DIR=/usr/src/service
-WORKDIR=$DIR
+WORKDIR $DIR
 
 COPY --from=build /src/package.json package.json
 COPY --from=build /src/package-lock.json package-lock.json
