@@ -1,7 +1,9 @@
 const client1  = require('./client');
 const client2  = require('./client');
 const client3  = require('./client');
-
+console.log('------');
+console.log(client1);
+console.log('------');
 const run = async (cli) => {
   console.log('cli_im:: 1');
   await cli.start();
