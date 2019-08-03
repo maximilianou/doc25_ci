@@ -2,6 +2,9 @@ const http2 = require('http2');
 const fs = require('fs');
 
 function create(){
+
+  this.start = () => {
+
   this.client = http2.connect('https://localhost:3443', {
     ca: fs.readFileSync('localhost-cert.pem')
   });
@@ -26,6 +29,7 @@ function create(){
     console.log(`client D::\n${data}`);
     this.client.close();
   });
+  };
   this.end = ()  => {
     this.req.end( () => {
       console.log(`client E:: end() `);
@@ -35,12 +39,11 @@ function create(){
   return this;
 };
 
-let uno = create();
-let dos = create();
-let tres = create();
-uno.end();
-dos.end();
-tres.end();
-// uno = null;
-// dos = null;
-// tres = null; 
+//let uno = create();
+//let dos = create();
+//let tres = create();
+//uno.end();
+//dos.end();
+//tres.end();
+
+module.exports = create();
