@@ -4,6 +4,8 @@ ci:
 	install \
 	staging \
 	staging-down
+setup:
+	docker volume create nodemodules
 docker-build:
 	docker build -t your-image-name .
 clean:
