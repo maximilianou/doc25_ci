@@ -7,11 +7,11 @@ ci:
 docker-build:
 	docker build -t your-image-name .
 clean:
-	docker-compose -f docker-compose.staging.yml run --rm clean
+	docker-compose -f docker-compose-staging.yml run --rm clean
 install:
-	docker-compose -f docker-compose.staging.yml run --rm install
+	docker-compose -f docker-compose-staging.yml run --rm install
 staging:  
-	docker-compose -f docker-compose.staging.yml up -d staging-deps
-	docker-compose -f docker-compose.staging.yml run --rm staging
+	docker-compose -f docker-compose-staging.yml up -d staging-deps
+	docker-compose -f docker-compose-staging.yml run --rm staging
 staging-down:
-	docker-compose -f docker-compose.staging.yml down
+	docker-compose -f docker-compose-staging.yml down
