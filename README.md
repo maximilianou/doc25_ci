@@ -32,3 +32,11 @@ Rollback in case of failure
 ```
 
 TODO: Second Stage of Build..
+
+REFERENCE: microservices.io
+
+TODO: chat over microsrevices ( websockets )
+
+TODO: wiki over microservices ( microservices.io )
+
+https://blog.logrocket.com/websockets-tutorial-how-to-go-real-time-with-node-and-react-8e4693fbf843/
